@@ -1,0 +1,73 @@
+#!usr/bin/bash
+clear
+##colors (FG & BG)
+RED="$(printf '\033[31m')"  GREEN="$(printf '\033[32m')"  ORANGE="$(printf '\033[33m')"  BLUE="$(printf '\033[34m')"
+MAGENTA="$(printf '\033[35m')"  CYAN="$(printf '\033[36m')"  WHITE="$(printf '\033[37m')" BLACK="$(printf '\033[30m')"
+REDBG="$(printf '\033[41m')"  GREENBG="$(printf '\033[42m')"  ORANGEBG="$(printf '\033[43m')"  BLUEBG="$(printf '\033[44m')"
+MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
+RESETBG="$(printf '\e[0m
+')"
+pkg install pv &> /dev/null
+#pckages
+echo ${GREEN}'.........Wait For Checking............' | pv -qL 10
+gem install ruby -y &> /dev/null
+gem install figlet -y &> /dev/null
+gem install lolcat -y &> /dev/null
+## security_varification
+echo ${GREEN}'..............COMPLETED............' | pv -qL 10
+echo ${GREEN}'[PLEASE VARIFY KEY.....]' | pv -qL 10 
+#!password requirements -
+read -p $'
+\033[31m[0] \033[32mHOW TO USE
+\033[31m[1] \033[32mGET KEY
+\033[31m[2] \033[32mENTER KEY
+
+SELECT AN OPTION :- 
+
+\033[32m]•\033[31m[Sploiterx]\033[32m•\033[31m[Meta-Installer]\033[32m•[:= ' key
+
+if [[ $key == *'0'* ]]; then
+
+sleep 2
+termux-open-url https://youtube.com/c/Sploiterx
+bash start
+fi
+
+if [[ $key == *'1'* ]]; then
+
+termux-open-url https://wa.me/%2B919756431740?text=%5B%20PLZZ%20GIVE%20ME%20TOPIC%20-%2041%20VEDIO%20KEY%20%5D
+clear
+sleep 3
+bash start
+fi
+
+if [[ $key == *'2'* ]]; then
+clear
+read -p $'
+\033[32mENTER VALID \033[31mKEY 
+
+\033[32m]•\033[31m[Sploiterx]\033[32m•\033[31m[Meta-Installer]\033[32m•[:= ' keys
+if [[ $keys == *'sploiterx_metainstaller'* ]]; then
+clear
+echo ${GREEN}'Wait For Checking............' | pv -qL 10
+echo ${GREEN}'ACCESS GRANTED.........' | pv -qL 10
+cp -rf metasploit.sh $/HOME
+cd
+
+sleep 2
+clear
+bash metasploit.sh
+fi
+fi
+
+if [[ $keys != *'sploiterx_metainstaller'* ]]; then
+clear
+echo ${GREEN}'Wait For Checking.........' | pv -qL 8
+sleep 2
+echo ${RED}'OOPS WRONG_KEY ????????????.........' | pv -qL 10
+sleep 3
+termux-open-url https://wa.me/%2B919756431740?text=%5B%20PLZZ%20GIVE%20ME%20TOPIC%20-%2040%20VEDIO%20KEY%20%5D
+echo ${RED}'TO RUN AGAIN TYPE [bash start] '  | pv -qL 10
+sleep 4
+exit
+fi
